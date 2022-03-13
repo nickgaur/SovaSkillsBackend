@@ -1,0 +1,558 @@
+@import url(https://fonts.googleapis.com/css?family=Poppins);
+html {
+  scroll-behavior: smooth;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+::selection {
+  background: #043249;
+  color: #fff;
+}
+body {
+  font-size: 16px;
+  color: #043249;
+  line-height: 26px;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(
+    229.32deg,
+    #eaecec -1.32%,
+    #bfe4d9 51.02%,
+    #eef2f1 103.37%
+  );
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+body,
+html {
+  height: 100%;
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px #fff inset !important;
+}
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none !important;
+  box-shadow: none !important;
+  border: #6600ff solid 2px !important;
+  background-color: transparent !important;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+a {
+  color: #043249;
+}
+a {
+  color: #043249;
+}
+.bold {
+  font-weight: 700;
+}
+a:hover,
+.nav-link:hover {
+  text-decoration: none;
+  color: #6600ff !important;
+}
+.pb-45 {
+  padding-bottom: 45px;
+}
+ul li {
+  list-style: none;
+  position: relative;
+  padding: 0 0 10px 20px;
+}
+.row:after,
+.row:before {
+  display: table;
+  content: " ";
+}
+.row:after {
+  clear: both;
+}
+button:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+a:focus {
+  text-decoration: none;
+  outline: medium none;
+  color: inherit;
+}
+a:hover {
+  color: inherit;
+  text-decoration: none;
+  color: inherit;
+}
+.sova-skills-btn-1 {
+  border: 2px solid rgba(4, 50, 73, 0.7);
+  border-radius: 10px;
+  background: transparent;
+  padding: 8px 30px !important;
+  color: rgba(23, 23, 23, 0.72);
+}
+.mb-20 {
+  margin-bottom: 20rem;
+}
+.ml-4 {
+  margin-left: 4.5rem !important;
+}
+.pb-4r {
+  padding-bottom: 4rem !important;
+}
+.sova-skills-btn-2 {
+  background: #043249;
+  border-radius: 6px;
+  padding: 8px 20px !important;
+  color: #fff;
+  border: 2px solid #043249;
+}
+.sova-skills-btn-2:hover {
+  background: transparent;
+  border-style: 2px solid #043249 !important;
+  color: #043249 !important;
+}
+strong {
+  font-weight: 700;
+  color: #6600ff;
+  font-size: 18px;
+}
+.sova-skills-btn-3 {
+  color: #6600ff;
+  font-weight: 700;
+}
+button:focus {
+  outline: medium none;
+}
+ul {
+  margin: 0;
+  padding: 0;
+}
+li {
+  list-style-type: none;
+}
+.section-separator {
+  padding-top: 100px;
+}
+.section-title {
+  font-size: 40px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.section-title > img {
+  width: 40px;
+}
+
+.section-subtitle {
+  font-size: 18px;
+  font-weight: 400;
+  margin-bottom: 30px;
+}
+
+/* NavBar */
+
+nav.navbar {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  z-index: 999;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.navbar-nav {
+  padding-top: 15px !important;
+  padding-bottom: 15px !important;
+}
+
+.logo img {
+  width: 120px !important;
+}
+
+nav.navbar .nav-item {
+  font-size: 13px;
+  font-weight: 400;
+  padding-right: 15px;
+  padding-left: 15px;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+nav.navbar .nav-item:first-child {
+  padding-left: 0;
+}
+
+nav.navbar .nav-item:last-child {
+  padding-right: 0;
+}
+
+nav.navbar .nav-item .nav-link {
+  color: #043249;
+  position: relative;
+  text-decoration: none;
+  padding: 0;
+  font-weight: 600;
+  text-transform: none;
+  font-size: 15px;
+}
+.animated-icon3 {
+  width: 30px;
+  height: 20px;
+  position: relative;
+  margin: 0px;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: 0.5s ease-in-out;
+  -moz-transition: 0.5s ease-in-out;
+  -o-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+  cursor: pointer;
+}
+
+.animated-icon3 span {
+  display: block;
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  border-radius: 9px;
+  opacity: 1;
+  left: 0;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: 0.25s ease-in-out;
+  -moz-transition: 0.25s ease-in-out;
+  -o-transition: 0.25s ease-in-out;
+  transition: 0.25s ease-in-out;
+}
+
+.animated-icon3 span {
+  background: #043249;
+}
+
+.animated-icon3 span:nth-child(1) {
+  top: 0px;
+  -webkit-transform-origin: left center;
+  -moz-transform-origin: left center;
+  -o-transform-origin: left center;
+  transform-origin: left center;
+}
+
+.animated-icon3 span:nth-child(2) {
+  top: 10px;
+  -webkit-transform-origin: left center;
+  -moz-transform-origin: left center;
+  -o-transform-origin: left center;
+  transform-origin: left center;
+}
+
+.animated-icon3 span:nth-child(3) {
+  top: 20px;
+  -webkit-transform-origin: left center;
+  -moz-transform-origin: left center;
+  -o-transform-origin: left center;
+  transform-origin: left center;
+}
+.nav-item {
+  padding: 0 10px !important;
+}
+
+/* Welcome Area */
+.sova-skills-welcome-area {
+  z-index: 1;
+  position: relative;
+}
+.welcome-text h4 {
+  background: linear-gradient(268.66deg, #2fe0aa -18.12%, #043249 111.41%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+.welcome-text h2 {
+  font-size: 50px;
+  font-weight: 700;
+  font-family: inherit;
+  margin-bottom: 40px;
+  background: linear-gradient(91.57deg, #043249 -10.01%, #2fe0aa 110.59%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+/* Product Area */
+.product-bg {
+  border: 4px solid #fff;
+  border-radius: 3rem;
+  box-shadow: -50px -50px 100px 0px rgb(220 255 250 / 50%);
+  box-shadow: 50px 50px 100px 0px rgb(162 194 184);
+  height: 30rem;
+}
+
+.product-gap {
+  padding: 50px;
+}
+
+.product-card-gap-1 {
+  padding: 25px;
+  margin-top: -14rem;
+}
+
+.product-card-gap-2 {
+  margin-top: -5rem;
+}
+
+.product-card-gap-3 {
+  padding: 25px;
+  margin-top: -3.5rem;
+}
+
+.product-card-gap-4 {
+  margin-top: -8rem;
+}
+
+.sova-skills-product-area .card {
+  background: #ffffff;
+  border: 5px solid #2fe0aa;
+  box-shadow: 0px 100px 80px rgba(0, 0, 0, 0.07),
+    0px 64.8148px 46.8519px rgba(0, 0, 0, 0.0531481),
+    0px 38.5185px 25.4815px rgba(0, 0, 0, 0.0425185),
+    0px 20px 13px rgba(0, 0, 0, 0.035),
+    0px 8.14815px 6.51852px rgba(0, 0, 0, 0.0274815),
+    0px 1.85185px 3.14815px rgba(0, 0, 0, 0.0168519);
+  border-radius: 20px;
+  margin-bottom: 40px;
+}
+
+.sova-skills-product-area .section-subtitle {
+  margin-bottom: 10rem;
+}
+
+/* School Area */
+.section-subtitle {
+  margin-bottom: 70px;
+}
+
+.school-row {
+  border: 3px solid #2fe0aa;
+  height: 200px;
+  display: grid;
+  place-items: center;
+  margin: 40px;
+  border-radius: 13px;
+}
+.school-logo {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  position: absolute;
+  left: -29%;
+  top: -29%;
+  box-shadow: 0px 100px 80px rgba(0, 0, 0, 0.07),
+    0px 64.8148px 46.8519px rgba(0, 0, 0, 0.0531481),
+    0px 38.5185px 25.4815px rgba(0, 0, 0, 0.0425185),
+    0px 20px 13px rgba(0, 0, 0, 0.035),
+    0px 8.14815px 6.51852px rgba(0, 0, 0, 0.0274815),
+    0px 1.85185px 3.14815px rgba(0, 0, 0, 0.0168519);
+}
+
+.school-name {
+  color: #6600ff;
+  margin-bottom: 12px;
+}
+.school-place {
+  color: #043249;
+}
+
+/* Contact form */
+.sova-skills-contact-area h2 {
+  color: #6600ff;
+  font-weight: 900;
+  font-size: 45px;
+}
+
+.sova-skills-contact-area .card {
+  background: rgba(255, 255, 255, 0.79);
+  border-radius: 25px;
+}
+
+.sova-skills-contact-area .form-control {
+  border: 2px solid rgba(102, 0, 255, 0.5);
+  border-radius: 10px;
+  background: transparent;
+  padding: 10px;
+}
+
+.sova-skills-contact-area .card-body {
+  padding: 30px;
+}
+
+.sova-skills-contact-area button {
+  width: 100%;
+  background: #2fe0aa;
+  border-radius: 5px;
+  color: #fff;
+  border-color: #2fe0aa;
+}
+
+/* Footer */
+.footer-bg {
+  background: rgba(255, 255, 255, 0.5);
+  border: 3px solid #2fe0aa;
+  border-radius: 20px;
+  padding: 20px 40px;
+}
+
+footer hr {
+  border-top: 3px dashed rgba(102, 0, 255, 0.34);
+  width: 100%;
+}
+
+footer .container-fluid {
+  padding: 0 5% !important;
+}
+
+@media (min-width: 991px) {
+  .navbar-collapse .navbar-nav {
+    background: radial-gradient(
+      97.57% 210.75% at 0.9% 2.98%,
+      rgba(255, 255, 255, 0.4) 0%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    backdrop-filter: blur(42px);
+    border-radius: 139px;
+    padding: 30px 35px;
+    border: 2px solid #04324925;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .welcome-text h2 {
+    font-size: 40px;
+    line-height: 50px;
+  }
+  .welcome-text p {
+    width: 100%;
+  }
+}
+@media (max-width: 767px) {
+  .m-hide {
+    display: none !important;
+  }
+  .m-center {
+    text-align: center !important;
+  }
+  .navbar-toggler span {
+    color: #043249;
+    font-size: 25px;
+  }
+  #navbarCollapse {
+    background: #fff none repeat scroll 0 0;
+  }
+  nav.navbar .nav-item {
+    padding: 0 !important;
+  }
+  nav.navbar .nav-item .nav-link {
+    color: #043249;
+    padding: 7px 15px;
+    font-size: 15px;
+  }
+  nav.navbar .nav-item .nav-link.active {
+    color: #0075ff !important;
+    padding: 7px 15px;
+    display: block;
+  }
+  .navbar-nav {
+    padding-top: 15px !important;
+    padding-bottom: 15px !important;
+  }
+}
+@media screen and (min-width: 767px) {
+  .p-hide {
+    display: none !important;
+  }
+  .sova-skills-contact-area .row {
+    background: radial-gradient(
+        97.57% 210.75% at 0.9% 2.98%,
+        rgba(255, 255, 255, 0.4) 0%,
+        rgba(255, 255, 255, 0) 100%
+      )
+      /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+    backdrop-filter: blur(42px);
+    padding: 30px 35px;
+    border: 2px solid #04324925;
+    border-radius: 10px;
+  }
+  .container-fluid {
+    width: 100%;
+    padding: 0 10%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .navbar {
+    padding: 0.5rem 0 !important;
+  }
+}
+
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+  .navbar-toggler span {
+    color: #043249;
+    font-size: 25px;
+  }
+  #navbarCollapse {
+    background: #fff none repeat scroll 0 0;
+  }
+  nav.navbar .nav-item {
+    padding: 0 !important;
+  }
+  nav.navbar .nav-item .nav-link {
+    color: #043249;
+    padding: 7px 15px;
+    font-size: 15px;
+  }
+  nav.navbar .nav-item .nav-link.active {
+    color: #0075ff !important;
+    padding: 7px 15px;
+    display: block;
+  }
+  .navbar-nav {
+    padding-top: 15px !important;
+    padding-bottom: 15px !important;
+  }
+  .welcome-text h2 {
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 42px;
+    font-family: inherit;
+    margin-bottom: 20px;
+  }
+  .welcome-text p {
+    font-size: 16px;
+    width: 100%;
+    color: #111111;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .welcome-text h2 {
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 42px;
+    font-family: inherit;
+    margin-bottom: 20px;
+  }
+}
