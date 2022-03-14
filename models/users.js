@@ -1,22 +1,42 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
-const bcrypt = require("bcrypt");
+const passportLocalMongoose = require("passport-local-mongoose");
 
 // DEFINING SCHEMA
 const UserSchema = new Schema({
   email: {
     type: String,
-    required: [true, "Email is required"],
+    trim: true,
+    lowercase: true,
     unique: true,
-    role: ['student', 'admin'],
+    validate: {
+        validator: function (v) {
+            return /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(v);
+        },
+        message: "Please enter a valid email"
+    },
+    required: [true, "Email required"]
+},
+  mobile: {
+    type: Number,
+    unique: true,
+    required: [true, "mobile no. is required"]
   },
-  password: {
-    type: String,
-    required: true,
-  },
+  roles: {
+    type: [{
+        type: String,
+        enum: ['user', 'admin']
+    }],
+    default: ['user']
+},
 });
 
-const User = mongoose.model("User", UserSchema);
+// UserSchema.statics.findAndValidate = async function (email, password){
+//   const foundUser = await this.findOne({ email });
+//   const isValid = await bcrypt.compare(password, foundUser.password);
+//   return isValid ? foundUser : false;
+// };
+// const User = mongoose.model("User", UserSchema);
 
 // CREATING ADMIN USER
 // const saltRounds = 10;
@@ -27,5 +47,5 @@ const User = mongoose.model("User", UserSchema);
 // });
 
 // adminUser.save();
-
-module.exports = mongoose.model("User", UserSchema);
+UserSchema.plugin(passportLocalMongoose)
+module.exports = mongoose.model('User', UserSchema);
