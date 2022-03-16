@@ -19,7 +19,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-font-smoothing: antialiased;
   font-family: "Poppins", sans-serif;
-  background: linear-gradient(
+  background: linear-gradient( 
     229.32deg,
     #eaecec -1.32%,
     #bfe4d9 51.02%,
@@ -53,8 +53,8 @@ img {
 a {
   color: #043249;
 }
-a {
-  color: #043249;
+a,button {
+  cursor: pointer;
 }
 .bold {
   font-weight: 700;
@@ -119,8 +119,32 @@ a:hover {
 }
 .sova-skills-btn-2:hover {
   background: transparent;
-  border-style: 2px solid #043249 !important;
+  border: 2px solid #043249 !important;
   color: #043249 !important;
+}
+.sova-skills-btn-4 {
+  background: #6600ff;
+  border-radius: 6px;
+  padding: 8px 40px !important;
+  color: #fff;
+  border: 2px solid #6600ff;
+}
+.sova-skills-btn-4:hover {
+  background: transparent;
+  border: 2px solid #6600ff !important;
+  color: #6600ff !important;
+}
+.sova-skills-btn-5 {
+  background: transparent;
+  border-radius: 6px;
+  padding: 8px 30px !important;
+  color: #6600ff;
+  border: 2px solid #6600ff;
+}
+.sova-skills-btn-5:hover {
+  background: #6600ff;
+  border: 2px solid #6600ff !important;
+  color: #fff !important;
 }
 strong {
   font-weight: 700;
@@ -170,7 +194,29 @@ nav.navbar {
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
 }
-
+.dropdown-menu a {
+  color: #111111;
+  text-decoration: none;
+  font-weight: 600;
+  text-transform: none;
+  font-size: 15px;
+  text-align: center;
+}
+.dropdown-divider {
+  background: #2FE0AA;
+  height: 2px;
+}
+.dropdown-toggle::after {
+  display: none;
+}
+.dropdown-menu {
+  margin-top: 10px;
+  border: none;
+  position: relative;
+  box-shadow: 0 8px 6px -6px rgba(0, 0, 0, 0.1);
+  border: 2px solid #2FE0AA;
+  border-radius: 7;
+}
 .navbar-nav {
   padding-top: 15px !important;
   padding-bottom: 15px !important;
@@ -339,10 +385,6 @@ nav.navbar .nav-item .nav-link {
   margin-bottom: 40px;
 }
 
-.sova-skills-product-area .section-subtitle {
-  margin-bottom: 10rem;
-}
-
 /* School Area */
 .section-subtitle {
   margin-bottom: 70px;
@@ -427,6 +469,31 @@ footer .container-fluid {
   padding: 0 5% !important;
 }
 
+/* Login */
+.sova-skills-login-area h2 {
+  color: #6600ff;
+  font-weight: 800;
+}
+
+.sova-skills-login-area .login-bg {
+  background: rgba(0, 0, 0, 0.06);
+}
+
+.sova-skills-login-area input {
+  background: #FFFFFF;
+  border: 1px solid #C1BBBB;
+  height: 50px;
+  border-radius: 2px;
+}
+
+.sova-skills-login-area input:focus {
+  background: #FFFFFF !important;
+  border-left: 5px solid #2FE0AA !important;
+  border-top: 1px solid #C1BBBB !important;
+  border-bottom: 1px solid #C1BBBB !important;
+  border-right: 1px solid #C1BBBB !important;
+}
+
 @media (min-width: 991px) {
   .navbar-collapse .navbar-nav {
     background: radial-gradient(
@@ -452,6 +519,22 @@ footer .container-fluid {
 @media (max-width: 767px) {
   .m-hide {
     display: none !important;
+  }
+  .sova-skills-login-area {
+    height: 80vh;
+  }  
+  .m-section-separator {
+    padding-top: 100px;
+  }
+  .sova-skills-product-area .card {
+    margin-bottom: 5px;
+  }
+  .school-logo {
+    left: -10%;
+    top: -20%;
+  }
+  .sova-skills-welcome-area {
+    padding-top: 150px;
   }
   .m-center {
     text-align: center !important;
@@ -484,6 +567,18 @@ footer .container-fluid {
 @media screen and (min-width: 767px) {
   .p-hide {
     display: none !important;
+  }
+  .sova-skills-login-area {
+    height: 100vh;
+  }  
+  .sova-skills-login-area input {
+    width: 85%;
+  }
+  .sova-skills-login-area {
+    background: linear-gradient(to left, rgba(0, 0, 0, 0.06) 55%, transparent 45%);
+  }
+  .sova-skills-product-area .section-subtitle {
+    margin-bottom: 10rem;
   }
   .sova-skills-contact-area .row {
     background: radial-gradient(

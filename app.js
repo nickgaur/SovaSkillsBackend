@@ -6,7 +6,9 @@ const session = require("express-session");
 const passport = require("passport");
 const userRoutes = require('./routes/users')
 const adminRoutes = require('./routes/admin')
+const registerRoutes = require('./routes/register')
 const cons = require('consolidate');
+const bcrypt = require('bcrypt')
 
 const dbUrl = "mongodb://localhost:27017/sova-skills";
 main().catch((err) => console.log(err));
@@ -33,19 +35,9 @@ app.use(
   })
 );
 
-/* BELOW CODE IS USED FOR AUTHENTICATION
-  USING passport-local-mongoose */
-// ===========================================
-app.use(passport.initialize());
-app.use(passport.session());
-
-passport.use(User.createStrategy());
-passport.serializeUser(User.serializeUser());
-passport.deserializeUser(User.deserializeUser());
-// ============================================
-
-app.use('/login', userRoutes)
-app.use('/admin', adminRoutes)
+app.use('/student-login', userRoutes)
+app.use('/admin-login', adminRoutes)
+app.use('/admin', registerRoutes)
 
 app.get("/", (req, res) => {
   res.render('index');
@@ -54,14 +46,14 @@ app.get("/", (req, res) => {
 
 
 app.get("/fakeuser", async (req, res) => {
-  const user = new User({
-    email: "admin@admin.com",
-    username: "admin",
-    mobile: 1234567890,
+  const user = {
+    firstName: "nafdick",
+    lastName: "gauafr",
+    schoolID: "1000012395@gmail.com",
+    password: bcrypt.hashSync("admin", 10),
     roles: 'admin'
-  });
-  const password = "admin@123";
-  const newUser = await User.register(user, "password");
+  };
+  const newUser = new User(user);
   await newUser.save();
   res.send("new user created");
 });
@@ -94,26 +86,21 @@ app.get("/fakeuser", async (req, res) => {
 //   }
 // });
 
-// app.post("/logout", (req, res) => {
-//   req.session.destroy();
-//   res.render("/login");
-// });
-
-// app.get("/courses", isLoggedIn, (req, res) => {
-//   res.sendFile(path.join(__dirname, "/views", "logout.html"));
-// });
-
-app.all("*", (req, res, next) => {
-  next(new ExpressError("Page Not Found!", 404));
-});
-
-app.use((err, req, res, next) => {
-  const { statusCode = 500 } = err;
-  if (!err.message) {
-    err.message = "Oh No, Something Went Wrong!";
+app.get('/secret', (req, res) => {
+  if(!req.session.userID){
+    return res.redirect('/student-login')
   }
-  res.status(statusCode).render("error", { err });
+  return res.send("secret")
+})
+
+app.get('/logout', (req, res) => {
+  res.render("logout")
+})
+app.post("/logout", (req, res) => {
+  req.session.destroy();
+  res.redirect("/student-login");
 });
+
 
 app.listen(3000, () => {
   console.log("APP IS STARTING!!");

@@ -1,15 +1,18 @@
+const User = require('../models/users')
+const bcrypt = require('bcrypt')
+
 module.exports.renderLoginForm = (req, res) => {
-    res.render('loginForm');
+    res.render('loginform');
 }
 
-module.exports.postLoginForm = (req, res) => {
-    res.send('post login form success')
-}
-
-module.exports.renderAdminLoginForm = (req, res) => {
-    res.render('adminLoginForm')
-}
-
-module.exports.postAdminLoginForm = (req, res) => {
-    res.render('logout')
+module.exports.postLoginForm = async (req, res) => {
+    const { schoolID, password } = req.body
+    const user = await User.findAndValidate(schoolID, password)
+    if (user) {
+        req.session.userID = user._id
+        const redirectTo = req.session.returnTo || "/home";
+        delete req.session.returnTo;
+        return res.redirect(redirectTo)
+    }
+    return res.redirect('/student-login')
 }

@@ -9,23 +9,7 @@ router
   .get(users.renderLoginForm)
   .post(
     isUser,
-    passport.authenticate("local", {
-      failureFlash: true,
-      failureRedirect: "/login",
-    }),
     users.postLoginForm
-  );
-
-router
-  .route("/admin")
-  .get(users.renderAdminLoginForm)
-  .post(
-    isAdmin,
-    passport.authenticate("local", {
-      failureFlash: true,
-      failureRedirect: "/login/admin",
-    }),
-    users.postAdminLoginForm
   );
 
 module.exports = router;

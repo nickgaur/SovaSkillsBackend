@@ -4,8 +4,13 @@ const users = require("../controllers/admin");
 const {isAdminLoggedIn, isAdmin} = require('../middleware')
 
 router
-  .route("/register")
-  .get(isAdminLoggedIn, isAdmin, users.renderRegisterForm)
-  .post(isAdminLoggedIn, isAdmin, users.postRegisterForm);
+  .route("/")
+  .get(users.renderAdminLoginForm)
+  .post(
+    isAdmin,
+    users.postAdminLoginForm
+  );
+
+
 
 module.exports = router;
