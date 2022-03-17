@@ -2,7 +2,7 @@ const User = require('../models/users')
 const bcrypt = require('bcrypt')
 
 module.exports.renderAdminLoginForm = (req, res) => {
-    res.render('adminLoginForm')
+    res.render('admin-login/index')
 }
 
 module.exports.postAdminLoginForm = async (req, res) => {
@@ -10,15 +10,16 @@ module.exports.postAdminLoginForm = async (req, res) => {
     const user = await User.findAndValidate(schoolID, password)
     if (user) {
         req.session.userID = user._id
-        const redirectTo = req.session.returnTo || "/home";
-        delete req.session.returnTo;
-        return res.redirect(redirectTo)
+        // console.log(req.session.userID)
+        // const redirectTo = req.session.returnTo || "/home";
+        // delete req.session.returnTo;
+        return res.redirect('/home')
     }
     return res.redirect('/admin-login')
 }
 
 module.exports.renderRegisterForm = (req, res) => {
-    res.render('register')
+    res.render('student-register/index')
 }
 
 module.exports.postRegisterForm = async (req, res) => {
@@ -27,9 +28,17 @@ module.exports.postRegisterForm = async (req, res) => {
         firstName,
         lastName,
         schoolID,
-        password: bcrypt.hashSync("admin", 10)
+        password: bcrypt.hashSync(password, 10)
     }
     const newUser = new User(user)
     await newUser.save()
     res.redirect('/admin/register')
+}
+
+module.exports.renderNewCourseForm = (req, res) => {
+    res.render('newCourseForm')
+}
+
+module.exports.postNewCourse = async (req,res) => {
+    res.send("new course added")
 }

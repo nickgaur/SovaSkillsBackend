@@ -1,14 +1,15 @@
 const mongoose = require("mongoose");
 const express = require("express");
 const path = require("path");
-const User = require("./models/users");
+// const User = require("./models/users");
 const session = require("express-session");
-const passport = require("passport");
-const userRoutes = require('./routes/users')
+const userLoginRoutes = require('./routes/userLogin')
+const adminLoginRoutes = require('./routes/adminLogin')
 const adminRoutes = require('./routes/admin')
-const registerRoutes = require('./routes/register')
 const cons = require('consolidate');
-const bcrypt = require('bcrypt')
+// const bcrypt = require('bcrypt')
+// const Course = require('./models/courses')
+const homeRoutes = require('./routes/home')
 
 const dbUrl = "mongodb://localhost:27017/sova-skills";
 main().catch((err) => console.log(err));
@@ -35,72 +36,58 @@ app.use(
   })
 );
 
-app.use('/student-login', userRoutes)
-app.use('/admin-login', adminRoutes)
-app.use('/admin', registerRoutes)
+app.use('/', homeRoutes)
+app.use('/student-login', userLoginRoutes)
+app.use('/admin-login', adminLoginRoutes)
+app.use('/admin', adminRoutes)
 
 app.get("/", (req, res) => {
   res.render('index');
 });
+// app.get('/home', isUserLoggedIn, (req, res) => {
+//   res.render('./student-dashboard/index')
+// })
 
+// app.get('/logout', (req,res) => {
+//   req.session.destroy()
+//   res.redirect('/student-login')
+// })
 
-
-app.get("/fakeuser", async (req, res) => {
-  const user = {
-    firstName: "nafdick",
-    lastName: "gauafr",
-    schoolID: "1000012395@gmail.com",
-    password: bcrypt.hashSync("admin", 10),
-    roles: 'admin'
-  };
-  const newUser = new User(user);
-  await newUser.save();
-  res.send("new user created");
-});
-
-// app.get("/login/admin", (req, res) => {
-//   res.render('adminLoginForm.html');
+// app.get("/fakeuser", async (req, res) => {
+//   const user = {
+//     firstName: "user",
+//     lastName: "user",
+//     schoolID: "user@gmail.com",
+//     password: bcrypt.hashSync("user", 10),
+//     roles: 'user'
+//   };
+//   const newUser = new User(user);
+//   await newUser.save();
+//   res.send("new user created");
 // });
 
-// app.post("/login/admin", passport.authenticate("local", {
-//   failureFlash: true,
-//   failureRedirect: "/login/admin",
-// }), async (req, res) => {
-//   res.render('logout')
+// app.get('/fakecourse', async (req, res) => {
+//   const course = {
+//     title: "web dev bootcamp",
+//     desc: "web dev bootcamp course. it include MERN stack."
 //   }
-// );
 
-// app.get("/admin/register", (req, res) => {}
-//   res.sendFile(path.join(__dirname, "/views", "signup.html"));
+//   const newCourse = new Course(course)
+//   await newCourse.save()
+//   res.send("New course is saved")
+// })
+
+// app.all("*", (req, res, next) => {
+//   next(new ExpressError("Page Not Found!", 404));
 // });
 
-// app.post("/admin/register", async (req, res) => {
-//   console.log(req.body)
-//   try {
-//     const { email, username, mobile, password } = req.body;
-//     const user = new User({email, username, mobile});
-//     const newUser = await User.register(user, password);
-//     res.send("NEW STUDENT ACCOUNT CREATED");
-//   } catch (error) {
-//     res.send("Username already exist");
+// app.use((err, req, res, next) => {
+//   const { statusCode = 500 } = err;
+//   if (!err.message) {
+//     err.message = "Oh No, Something Went Wrong!";
 //   }
+//   res.status(statusCode).render("error", { err });
 // });
-
-app.get('/secret', (req, res) => {
-  if(!req.session.userID){
-    return res.redirect('/student-login')
-  }
-  return res.send("secret")
-})
-
-app.get('/logout', (req, res) => {
-  res.render("logout")
-})
-app.post("/logout", (req, res) => {
-  req.session.destroy();
-  res.redirect("/student-login");
-});
-
 
 app.listen(3000, () => {
   console.log("APP IS STARTING!!");

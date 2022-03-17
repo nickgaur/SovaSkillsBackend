@@ -1,16 +1,16 @@
 const express = require("express");
 const router = express.Router({ mergeParams: true });
 const users = require("../controllers/admin");
-const {isAdminLoggedIn, isAdmin} = require('../middleware')
+const { isAdminLoggedIn, isAdmin } = require('../middleware')
 
 router
-  .route("/")
-  .get(users.renderAdminLoginForm)
-  .post(
-    isAdmin,
-    users.postAdminLoginForm
-  );
+    .route("/register")
+    .get(isAdminLoggedIn, users.renderRegisterForm)
+    .post(isAdminLoggedIn, users.postRegisterForm);
 
+// router
+// .route('/newcourse')
+// .get(isAdminLoggedIn, isAdmin, users.renderNewCourseForm)
+// .post(isAdminLoggedIn, isAdmin, users.postNewCourse)
 
-
-module.exports = router;
+module.exports = router
