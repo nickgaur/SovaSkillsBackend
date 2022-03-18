@@ -31,7 +31,7 @@
                         <a href="#" class="nav-link close-menu active">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#experts" class="nav-link close-menu">Academics</a>
+                        <a  target="<%= currUser %>/academics" class="nav-link close-menu">Academics</a>
                     </li>
                     <li class="nav-item">
                         <a href="#testimonial" class="nav-link close-menu">Courses</a>
@@ -74,7 +74,9 @@
                 <!-- </div> -->
                 <!-- <div class=""> -->
                     <div class="col-lg-2 col-md-2 text-right">
+                        <% if(currUser === 'admin'){ %>
                         <a href="/admin/register" class="sova-skills-btn-6">Add User</a>
+                    <%}%>
                     </div>
                     <div class="col-lg-2 col-md-2 text-right m-hide">
                         <a href="/logout" class="sova-skills-btn-6">Logout</a>
@@ -92,31 +94,32 @@
                 <div class="col-lg-2 col-md-3 m-hide side-bar">
                     <div class="sova-skills-sidebar">
                         <div class="sova-skills-sidebar-item active">
-                            <a class="d-flex align-items-center" href="#courses">
+                            <a class="d-flex align-items-center" href="#">
                                 <img class="m-2" width="15px" src="../assets/img/icons/home-icon.svg" alt="home-icon">
                                 <span>Home</span>
                             </a>
                         </div>
                         <div class="sova-skills-sidebar-item">
-                            <a class="d-flex align-items-center" href="#experts">
+                            <a class="d-flex align-items-center"
+                              target="student/academics">
                                 <img class="m-2" width="15px" src="../assets/img/icons/academic-icon.svg" alt="academics-icon">
                                 <span>Academics</span>
                             </a>
                         </div>
                         <div class="sova-skills-sidebar-item">
-                            <a class="d-flex align-items-center" href="#testimonial">
+                            <a class="d-flex align-items-center" href="#" %> >
                                 <img class="m-2" width="15px" src="../assets/img/icons/course-icon.svg" alt="courses-icon">
                                 <span>Courses</span>
                             </a>
                         </div>
                         <div class="sova-skills-sidebar-item">
-                            <a class="d-flex align-items-center" href="#experts">
+                            <a class="d-flex align-items-center" href="#" >
                                 <img class="m-2" width="15px" src="../assets/img/icons/community-icon.svg" alt="community-icon">
                                 <span>Community</span>
                             </a>
                         </div>
                         <div class="sova-skills-sidebar-item">
-                            <a class="d-flex align-items-center" href="#testimonial">
+                            <a class="d-flex align-items-center" href="#" >
                                 <img class="m-2" width="15px" src="../assets/img/icons/compi-icon.svg" alt="competitions-icon">
                                 <span>Competitions</span>
                             </a>

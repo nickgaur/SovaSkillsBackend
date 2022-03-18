@@ -43,7 +43,7 @@
                         <a href="../competition/" class="nav-link close-menu">Competitions</a>
                     </li>
                     <li class="nav-item">
-                        <a href="" class="nav-link close-menu sova-skills-btn-1">Logout</a>
+                        <a href="/logout" class="nav-link close-menu sova-skills-btn-1">Logout</a>
                     </li>
                 </ul>
             </div>
@@ -73,7 +73,7 @@
                     </div>
                 </div>
                 <div class="col-lg-2 col-md-2 text-right m-hide">
-                    <a href="/student-register" class="sova-skills-btn-6">Logout</a>
+                    <a href="/logout" class="sova-skills-btn-6">Logout</a>
                 </div>
             </div>
         </div>
@@ -130,7 +130,25 @@
                         <div class="col-12">
                             <img src="../../assets/img/dashboard-banner.svg">
                             <div class="row pt-4">
+                                <% for(let course of allCourses){ %>
                                 <div class="col-md-6 col-lg-4 col-sm-6 col-12 course-card">
+                                    <div class="card">
+                                        <img src="../../assets/img/course/c-1.png" class="img-fluid full-img">
+                                        <div class="card-body">
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <p class="course-type">Language</p>
+                                                <p class="course-level"><img width="10px" src="../../assets/img/icons/dot-icon.svg"> <%= course.level %></p>
+                                            </div>
+                                            <h5 class="card-title bold"><%= course.title %></h5>
+                                            <p class="card-text mb-0">Duration: <%= course.duration %> hours</p>
+                                            <p class="card-text mb-0">Class: <%= course.class %></p>
+                                            <p class="card-text">Support: 1-1</p>
+                                            <a href="" class="card-link text-center"><p class="mb-0">Join The Class</p></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <% } %>
+                                <!-- <div class="col-md-6 col-lg-4 col-sm-6 col-12 course-card">
                                     <div class="card">
                                         <img src="../../assets/img/course/c-1.png" class="img-fluid full-img">
                                         <div class="card-body">
@@ -145,8 +163,8 @@
                                             <a href="" class="card-link text-center"><p class="mb-0">Join The Class</p></a>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="col-md-6 col-lg-4 col-sm-6 col-12 course-card">
+                                </div> -->
+                                <!-- <div class="col-md-6 col-lg-4 col-sm-6 col-12 course-card">
                                     <div class="card">
                                         <img src="../../assets/img/course/c-1.png" class="img-fluid full-img">
                                         <div class="card-body">
@@ -161,8 +179,8 @@
                                             <a href="" class="card-link text-center"><p class="mb-0">Join The Class</p></a>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="col-md-6 col-lg-4 col-sm-6 col-12 course-card">
+                                </div> -->
+                                <!-- <div class="col-md-6 col-lg-4 col-sm-6 col-12 course-card">
                                     <div class="card">
                                         <img src="../../assets/img/course/c-1.png" class="img-fluid full-img">
                                         <div class="card-body">
@@ -177,8 +195,8 @@
                                             <a href="" class="card-link text-center"><p class="mb-0">Join The Class</p></a>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="col-md-6 col-lg-4 col-sm-6 col-12 course-card">
+                                </div> -->
+                                <!-- <div class="col-md-6 col-lg-4 col-sm-6 col-12 course-card">
                                     <div class="card">
                                         <img src="../../assets/img/course/c-1.png" class="img-fluid full-img">
                                         <div class="card-body">
@@ -193,8 +211,8 @@
                                             <a href="" class="card-link text-center"><p class="mb-0">Join The Class</p></a>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="col-md-6 col-lg-4 col-sm-6 col-12 course-card">
+                                </div> -->
+                                <!-- <div class="col-md-6 col-lg-4 col-sm-6 col-12 course-card">
                                     <div class="card">
                                         <img src="../../assets/img/course/c-1.png" class="img-fluid full-img">
                                         <div class="card-body">
@@ -209,23 +227,7 @@
                                             <a href="" class="card-link text-center"><p class="mb-0">Join The Class</p></a>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="col-md-6 col-lg-4 col-sm-6 col-12 course-card">
-                                    <div class="card">
-                                        <img src="../../assets/img/course/c-1.png" class="img-fluid full-img">
-                                        <div class="card-body">
-                                            <div class="d-flex justify-content-between align-items-center">
-                                                <p class="course-type">Language</p>
-                                                <p class="course-level"><img width="10px" src="../../assets/img/icons/dot-icon.svg"> Beginner</p>
-                                            </div>
-                                            <h5 class="card-title bold">Enterpreneurship</h5>
-                                            <p class="card-text mb-0">Duration: 8 hours</p>
-                                            <p class="card-text mb-0">Class: Recorded</p>
-                                            <p class="card-text">Support: 1-1</p>
-                                            <a href="" class="card-link text-center"><p class="mb-0">Join The Class</p></a>
-                                        </div>
-                                    </div>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                     </div>

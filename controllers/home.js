@@ -1,8 +1,8 @@
-module.exports.renderHomepage = (req, res) => {
-    res.render('student-dashboard/index')
-}
+const users = require("../models/users")
+
 
 module.exports.logout = (req, res) => {
     req.session.destroy()
     res.redirect('/')
 }
+

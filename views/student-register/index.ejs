@@ -17,7 +17,7 @@
   <nav class="navbar navbar-expand-lg">
     <div class="container-fluid">
       <!-- LOGO -->
-      <a class="navbar-brand logo" href="#">
+      <a class="navbar-brand logo" href="/home">
         <img src="../assets/img/logo.svg" alt="sova-skills-logo">
       </a>
       <button class="navbar-toggler navbar-toggler-right third-button" type="button" data-toggle="collapse"
@@ -69,6 +69,7 @@
           <h2>Learn | Lead | Achieve</h2>
           <p>Welcome  back! Please create your account.</p>
           <form action="/admin/register" method="POST">
+            <%- include("../partials/flash") %>
             <div class="form-group">
               <input type="text" class="form-control" name="firstName" placeholder="First Name" required>
             </div>
