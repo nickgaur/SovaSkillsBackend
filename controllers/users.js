@@ -34,6 +34,7 @@ module.exports.renderAcademics = (req, res) => {
 }
 
 module.exports.renderAllCourses = async (req, res) => {
+    console.log("render courses")
     const user = await User.findById(req.session.userID)
     const currUser = user.roles[0]
     const allCourses = await Course.find()

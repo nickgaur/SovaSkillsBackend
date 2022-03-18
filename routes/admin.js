@@ -14,11 +14,13 @@ router
 
 router
   .route('/home')
-  .get(isAdminLoggedIn, users.renderHomepage)
+  .get(isAdminLoggedIn, isAdminLogged, users.renderHomepage)
 
 router
   .route("/register")
   .get(isAdminLoggedIn, isAdminLogged, admin.renderRegisterForm)
   .post(isAdminLoggedIn, isAdminLogged, admin.postRegisterForm);
+
+  router.route('/courses').get(isAdminLoggedIn, isAdminLogged, users.renderAllCourses)
 
 module.exports = router;
