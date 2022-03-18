@@ -5,7 +5,7 @@ if (process.env.NODE_ENV !== "production") {
 const mongoose = require("mongoose");
 const express = require("express");
 const path = require("path");
-const session = require("express-session");
+const session = require("cookie-session");
 const userLoginRoutes = require('./routes/userLogin')
 const adminLoginRoutes = require('./routes/adminLogin')
 const adminRoutes = require('./routes/admin')
