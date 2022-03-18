@@ -1,3 +1,7 @@
+if (process.env.NODE_ENV !== "production") {
+  require("dotenv").config();
+}
+
 const mongoose = require("mongoose");
 const express = require("express");
 const path = require("path");
@@ -7,8 +11,9 @@ const adminLoginRoutes = require('./routes/adminLogin')
 const adminRoutes = require('./routes/admin')
 const cons = require('consolidate');
 const homeRoutes = require('./routes/home')
+const port = process.env.PORT || 8000
+const dbUrl = process.env.DB_URL || "mongodb://localhost:27017/sova-skills";
 
-const dbUrl = "mongodb://localhost:27017/sova-skills";
 main().catch((err) => console.log(err));
 
 async function main() {
@@ -41,51 +46,8 @@ app.use('/admin', adminRoutes)
 app.get("/", (req, res) => {
   res.render('index');
 });
-// app.get('/home', isUserLoggedIn, (req, res) => {
-//   res.render('./student-dashboard/index')
-// })
 
-// app.get('/logout', (req,res) => {
-//   req.session.destroy()
-//   res.redirect('/student-login')
-// })
 
-// app.get("/fakeuser", async (req, res) => {
-//   const user = {
-//     firstName: "user",
-//     lastName: "user",
-//     schoolID: "user@gmail.com",
-//     password: bcrypt.hashSync("user", 10),
-//     roles: 'user'
-//   };
-//   const newUser = new User(user);
-//   await newUser.save();
-//   res.send("new user created");
-// });
-
-// app.get('/fakecourse', async (req, res) => {
-//   const course = {
-//     title: "web dev bootcamp",
-//     desc: "web dev bootcamp course. it include MERN stack."
-//   }
-
-//   const newCourse = new Course(course)
-//   await newCourse.save()
-//   res.send("New course is saved")
-// })
-
-// app.all("*", (req, res, next) => {
-//   next(new ExpressError("Page Not Found!", 404));
-// });
-
-// app.use((err, req, res, next) => {
-//   const { statusCode = 500 } = err;
-//   if (!err.message) {
-//     err.message = "Oh No, Something Went Wrong!";
-//   }
-//   res.status(statusCode).render("error", { err });
-// });
-
-app.listen(3000, () => {
+app.listen(port, () => {
   console.log("APP IS STARTING!!");
 });

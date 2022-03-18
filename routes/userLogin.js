@@ -1,8 +1,7 @@
 const express = require("express");
 const router = express.Router({ mergeParams: true });
 const users = require("../controllers/users");
-const passport = require("passport");
-const { isAdmin, isUser } = require("../middleware");
+const { isUser } = require("../middleware");
 
 router
   .route("/")
