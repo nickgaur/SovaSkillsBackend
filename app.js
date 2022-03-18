@@ -1,14 +1,11 @@
 const mongoose = require("mongoose");
 const express = require("express");
 const path = require("path");
-// const User = require("./models/users");
 const session = require("express-session");
 const userLoginRoutes = require('./routes/userLogin')
 const adminLoginRoutes = require('./routes/adminLogin')
 const adminRoutes = require('./routes/admin')
 const cons = require('consolidate');
-// const bcrypt = require('bcrypt')
-// const Course = require('./models/courses')
 const homeRoutes = require('./routes/home')
 
 const dbUrl = "mongodb://localhost:27017/sova-skills";

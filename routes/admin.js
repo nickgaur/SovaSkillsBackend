@@ -1,12 +1,12 @@
 const express = require("express");
 const router = express.Router({ mergeParams: true });
 const users = require("../controllers/admin");
-const { isAdminLoggedIn, isAdmin } = require('../middleware')
+const { isAdminLoggedIn, isAdminLogged } = require('../middleware')
 
 router
     .route("/register")
-    .get(isAdminLoggedIn, users.renderRegisterForm)
-    .post(isAdminLoggedIn, users.postRegisterForm);
+    .get(isAdminLoggedIn, isAdminLogged, users.renderRegisterForm)
+    .post(isAdminLoggedIn, isAdminLogged, users.postRegisterForm);
 
 // router
 // .route('/newcourse')

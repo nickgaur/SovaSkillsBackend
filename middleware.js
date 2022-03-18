@@ -31,3 +31,12 @@ module.exports.isAdmin = async (req, res, next) => {
   }
   next();
 };
+
+module.exports.isAdminLogged = async (req, res, next) => {
+  const currID = req.session.userID;
+  const user = await User.findById(currID)
+  if (user.roles[0] !== 'admin'){
+  return res.redirect('/admin-login')
+  }
+  next()
+}
