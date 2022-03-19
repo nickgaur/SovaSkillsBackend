@@ -22,6 +22,7 @@ module.exports.postLoginForm = async (req, res) => {
 module.exports.renderHomepage = async (req, res) => {
     const user = await User.findById(req.session.userID)
     const currUser = user.roles[0]
+    console.log(currUser)
     res.render('student-dashboard/index', { currUser })
 }
 
