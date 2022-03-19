@@ -57,6 +57,8 @@ module.exports.postNewCourse = async (req, res) => {
     res.redirect("/admin/courses")
 }
 
-// module.exports.renderAcademics = (req, res) => {
-//     res.render('student-dashboard/academics/index')
-// }
+module.exports.deleteCourse = async (req, res) => {
+    await Course.findByIdAndDelete(req.params.courseId);
+    req.flash("success", "Course Deleted Successfully");
+    res.redirect("/admin/courses");
+  };

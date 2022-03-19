@@ -17,7 +17,8 @@ const port = process.env.PORT || 8000
 const MongoStore = require("connect-mongo");
 const flash = require("connect-flash/lib/flash");
 const ejsMate = require("ejs-mate");
-const Course = require('./models/courses')
+const Course = require('./models/courses');
+const methodOverride = require("method-override");
 
 main().catch((err) => console.log(err));
 
@@ -35,6 +36,7 @@ app.set("view engine", "ejs");
 app.set('views', path.join(__dirname, 'views'));
 // app.set('view engine', 'html');
 app.use(express.static(path.join(__dirname, "views")));
+app.use(methodOverride("_method"))
 
 const secret = process.env.SECRET;
 

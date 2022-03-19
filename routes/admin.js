@@ -34,4 +34,8 @@ router
   .get(isAdminLoggedIn, isAdminLogged, admin.renderNewCourseForm)
   .post(isAdminLoggedIn, isAdminLogged, admin.postNewCourse)
 
+router.route('/courses/:courseId/delete')
+  .delete(isAdminLoggedIn, isAdminLogged, admin.deleteCourse)
+
+
 module.exports = router;
