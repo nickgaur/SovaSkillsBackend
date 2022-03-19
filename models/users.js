@@ -55,23 +55,23 @@ UserSchema.statics.findAndValidate = async function (schoolID, password) {
 
 const User = mongoose.model('User', UserSchema)
 
-  // const user = {
-  //   firstName: "user",
-  //   lastName: "user",
-  //   schoolID: "user@gmail.com",
-  //   password: bcrypt.hashSync("user", 10),
-  // };
-  // const newUser = new User(user);
-  // newUser.save();
+  const user = {
+    firstName: "user",
+    lastName: "user",
+    schoolID: "user@gmail.com",
+    password: bcrypt.hashSync("user", 10),
+  };
+  const newUser = new User(user);
+  newUser.save();
   
-  // const admin = {
-  //   firstName: "admin",
-  //   lastName: "admin",
-  //   schoolID: "admin@gmail.com",
-  //   password: bcrypt.hashSync("admin", 10),
-  //   roles: ['admin']
-  // };
-  // const adminUser = new User(admin);
-  // adminUser.save();
+  const admin = {
+    firstName: "admin",
+    lastName: "admin",
+    schoolID: "admin@gmail.com",
+    password: bcrypt.hashSync("admin", 10),
+    roles: ['admin']
+  };
+  const adminUser = new User(admin);
+  adminUser.save();
 
 module.exports = mongoose.model('User', UserSchema);
