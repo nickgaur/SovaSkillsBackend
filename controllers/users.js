@@ -2,10 +2,6 @@ const User = require('../models/users')
 const Course = require('../models/courses')
 const bcrypt = require('bcrypt')
 
-const checkUser = async () => {
-
-    return currUser
-}
 
 module.exports.renderLoginForm = (req, res) => {
     res.render('student-login/index');
@@ -34,7 +30,6 @@ module.exports.renderAcademics = (req, res) => {
 }
 
 module.exports.renderAllCourses = async (req, res) => {
-    console.log("render courses")
     const user = await User.findById(req.session.userID)
     const currUser = user.roles[0]
     const allCourses = await Course.find()
