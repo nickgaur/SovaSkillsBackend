@@ -20,20 +20,30 @@ module.exports.postLoginForm = async (req, res) => {
 }
 
 module.exports.renderHomepage = async (req, res) => {
-    const user = await User.findById(req.session.userID)
-    const currUser = user.roles[0]
-    console.log(currUser)
+    const currUser = await User.findById(req.session.userID)
     res.render('student-dashboard/index', { currUser })
 }
 
-module.exports.renderAcademics = (req, res) => {
-    res.render('student-dashboard/academics/index')
+module.exports.renderAcademics = async (req, res) => {
+    const currUser = await User.findById(req.session.userID)
+    res.render('student-dashboard/academics/index', {currUser})
 }
 
 module.exports.renderAllCourses = async (req, res) => {
-    const user = await User.findById(req.session.userID)
-    const currUser = user.roles[0]
+    const currUser = await User.findById(req.session.userID)
     const allCourses = await Course.find()
     res.render('student-dashboard/courses/index', { allCourses, currUser })
 }
+
+module.exports.renderCommunityPage = async (req, res) => {
+    const currUser = await User.findById(req.session.userID)
+    res.render('student-dashboard/community/index', { currUser })
+}
+
+module.exports.renderCompetitionsPage = async (req, res) => {
+    const currUser = await User.findById(req.session.userID)
+    res.render('student-dashboard/competition/index', { currUser })
+}
+
+
 

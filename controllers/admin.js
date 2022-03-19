@@ -1,5 +1,6 @@
 const User = require('../models/users')
 const bcrypt = require('bcrypt')
+const Course = require('../models/courses')
 
 module.exports.renderAdminLoginForm = (req, res) => {
     res.render('admin-login/index')
@@ -41,13 +42,20 @@ module.exports.postRegisterForm = async (req, res) => {
     }
 }
 
-// module.exports.renderNewCourseForm = (req, res) => {
-//     res.render('newCourseForm')
-// }
+module.exports.renderNewCourseForm = (req, res) => {
+    res.render('forms/addNew')
+}
 
-// module.exports.postNewCourse = async (req, res) => {
-//     res.send("new course added")
-// }
+module.exports.postNewCourse = async (req, res) => {
+    const {title, level, duration} = req.body
+    const newCourse = await new Course({
+        title,
+        level,
+        duration
+    })
+    await newCourse.save()
+    res.redirect("/admin/courses")
+}
 
 // module.exports.renderAcademics = (req, res) => {
 //     res.render('student-dashboard/academics/index')

@@ -11,8 +11,8 @@ const adminRoutes = require('./routes/admin')
 // const adminRoutes = require('./routes/admin')
 // const cons = require('consolidate');
 const homeRoutes = require('./routes/home')
-const dbUrl = process.env.DB_URL || "mongodb://localhost:27017/sova-skills";
-// const dbUrl = "mongodb://localhost:27017/sova-skills"   // FOR DEVELOPMENT MODE
+// const dbUrl = process.env.DB_URL || "mongodb://localhost:27017/sova-skills";
+const dbUrl = "mongodb://localhost:27017/sova-skills"   // FOR DEVELOPMENT MODE
 const port = process.env.PORT || 8000
 const MongoStore = require("connect-mongo");
 const flash = require("connect-flash/lib/flash");
@@ -92,7 +92,7 @@ app.get("/", (req, res) => {
 
 
 app.use("*", (req, res) => {
-  res.send("Page Not Found")
+  res.render('error')
 })
 
 app.listen(port, () => {

@@ -21,6 +21,17 @@ router
   .get(isAdminLoggedIn, isAdminLogged, admin.renderRegisterForm)
   .post(isAdminLoggedIn, isAdminLogged, admin.postRegisterForm);
 
-  router.route('/courses').get(isAdminLoggedIn, isAdminLogged, users.renderAllCourses)
+router.route('/academics').get(isAdminLoggedIn, isAdminLogged, users.renderAcademics)
+
+router.route('/courses').get(isAdminLoggedIn, isAdminLogged, users.renderAllCourses)
+
+router.route('/community').get(isAdminLoggedIn, isAdminLogged, users.renderCommunityPage)
+
+router.route('/competitions').get(isAdminLoggedIn, isAdminLogged, users.renderCompetitionsPage)
+
+router
+  .route('/courses/new')
+  .get(isAdminLoggedIn, isAdminLogged, admin.renderNewCourseForm)
+  .post(isAdminLoggedIn, isAdminLogged, admin.postNewCourse)
 
 module.exports = router;

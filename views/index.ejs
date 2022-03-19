@@ -9,6 +9,9 @@
    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
    <link rel="stylesheet" href="assets/css/animate.min.css">
    <link rel="stylesheet" href="assets/css/bootstrap.css">
+   <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.1/assets/owl.carousel.min.css" />
+   <link rel="stylesheet" href="https://themes.audemedia.com/html/goodgrowth/css/owl.theme.default.min.css" />
    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
@@ -17,7 +20,7 @@
    <nav class="navbar navbar-expand-lg">
       <div class="container-fluid">
          <!-- LOGO -->
-         <a class="navbar-brand logo" href="/">
+         <a class="navbar-brand logo" href="#">
             <img src="assets/img/logo.svg" alt="sova-skills-logo">
          </a>
          <button class="navbar-toggler navbar-toggler-right third-button" type="button" data-toggle="collapse"
@@ -31,10 +34,25 @@
                   <a href="#courses" class="nav-link close-menu">Learning App </a>
                </li>
                <li class="nav-item">
-                  <a href="#experts" class="nav-link close-menu">School Solutions</a>
+                  <a href="#schools" class="nav-link close-menu">School Solutions</a>
                </li>
-               <li class="nav-item">
-                  <a href="#testimonial" class="nav-link close-menu">Study Material</a>
+               <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle text-center" href="#" id="navbarDropdown"
+                     role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                     Study Material</a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                     <a class="dropdown-item" href="student-login/">Lenguistic Skills</a>
+                     <div class="dropdown-divider"></div>
+                     <a class="dropdown-item" href="school-login/">Personal Development</a>
+                     <div class="dropdown-divider"></div>
+                     <a class="dropdown-item" href="school-login/">Coding & IT</a>
+                     <div class="dropdown-divider"></div>
+                     <a class="dropdown-item" href="school-login/">Arts & Humanities</a>
+                     <div class="dropdown-divider"></div>
+                     <a class="dropdown-item" href="school-login/">Entrepreneurship & Business</a>
+                     <div class="dropdown-divider"></div>
+                     <a class="dropdown-item" href="school-login/">Design</a>
+                  </div>
                </li>
                <li class="nav-item">
                   <a href="" class="nav-link close-menu">Contact us</a>
@@ -44,9 +62,9 @@
                      role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                      Login</a>
                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                     <a class="dropdown-item" href="/student">Student</a>
+                     <a class="dropdown-item" href="student/">Student</a>
                      <div class="dropdown-divider"></div>
-                     <a class="dropdown-item" href="/admin">School</a>
+                     <a class="dropdown-item" href="admin/">School</a>
                   </div>
                </li>
             </ul>
@@ -58,9 +76,9 @@
                      role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                      Login</a>
                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                     <a class="dropdown-item" href="/student">Student</a>
+                     <a class="dropdown-item" href="student/">Student</a>
                      <div class="dropdown-divider"></div>
-                     <a class="dropdown-item" href="/admin">School</a>
+                     <a class="dropdown-item" href="admin/">School</a>
                   </div>
                </li>
             </ul>
@@ -111,7 +129,7 @@
                            <div class="col-12 card p-0">
                               <div class="card-body">
                                  <img class="pb-4" src="assets/img/icons/icon-2.svg" alt="">
-                                 <h5 class="card-title bold">JEE Preparation</h5>
+                                 <h5 class="card-title bold">Community Based Learning</h5>
                                  <p class="card-text">Lorem ipsum dolor sit amet, consectetur</p>
                                  <a href="" class="sova-skills-btn-3">Explore</a>
                               </div>
@@ -119,7 +137,7 @@
                            <div class="col-12 card p-0">
                               <div class="card-body">
                                  <img class="pb-4" src="assets/img/icons/icon-3.svg" alt="">
-                                 <h5 class="card-title bold">NEET Preparation</h5>
+                                 <h5 class="card-title bold">E-library</h5>
                                  <p class="card-text">Lorem ipsum dolor sit amet, consectetur</p>
                                  <a href="" class="sova-skills-btn-3">Explore</a>
                               </div>
@@ -130,21 +148,21 @@
                         <div class="row product-card-gap-2">
                            <div class="col-12 card p-0">
                               <div class="card-body">
-                                 <h5 class="card-title bold">SAT Preparation</h5>
+                                 <h5 class="card-title bold">Acadmic Assistance</h5>
                                  <p class="card-text">Lorem ipsum dolor sit amet, consectetur</p>
                                  <a href="" class="sova-skills-btn-3">Explore</a>
                               </div>
                            </div>
                            <div class="col-12 card p-0">
                               <div class="card-body">
-                                 <h5 class="card-title bold">TOFAL Preparation</h5>
+                                 <h5 class="card-title bold">Overall Personal Development</h5>
                                  <p class="card-text">Lorem ipsum dolor sit amet, consectetur</p>
                                  <a href="" class="sova-skills-btn-3">Explore</a>
                               </div>
                            </div>
                            <div class="col-12 card p-0">
                               <div class="card-body">
-                                 <h5 class="card-title bold">CAP Preparation</h5>
+                                 <h5 class="card-title bold">Cognitive Skills</h5>
                                  <p class="card-text">Lorem ipsum dolor sit amet, consectetur</p>
                                  <a href="" class="sova-skills-btn-3">Explore</a>
                               </div>
@@ -154,7 +172,7 @@
                   </div>
                </div>
             </div>
-            <div class="col-12 mb-20 m-hide">
+            <div id="schools" class="col-12 mb-20 m-hide">
                <div class="row">
                   <div class="product-bg d-flex product-gap">
                      <div class="col-lg-3 col-md-4">
@@ -162,7 +180,7 @@
                            <div class="col-12 card p-0">
                               <div class="card-body">
                                  <img class="pb-4" src="assets/img/icons/icon-3.svg" alt="">
-                                 <h5 class="card-title bold">Smart Class Solution</h5>
+                                 <h5 class="card-title bold">AR/VR Solution</h5>
                                  <p class="card-text">Lorem ipsum dolor sit amet, consectetur</p>
                                  <a href="" class="sova-skills-btn-3">Explore</a>
                               </div>
@@ -170,7 +188,7 @@
                            <div class="col-12 card p-0">
                               <div class="card-body">
                                  <img class="pb-4" src="assets/img/icons/icon-4.svg" alt="">
-                                 <h5 class="card-title bold">Assignment Center</h5>
+                                 <h5 class="card-title bold">AI Based Reports</h5>
                                  <p class="card-text">Lorem ipsum dolor sit amet, consectetur</p>
                                  <a href="" class="sova-skills-btn-3">Explore</a>
                               </div>
@@ -407,61 +425,71 @@
                </p>
             </div>
             <div class="col-12">
-               <div class="row justify-content-center">
-                  <div class="col-lg-2 col-md-4 school-row">
-                     <div class="school-name-place text-center">
-                        <div class="school-logo"> <img src="./assets/img/School-logo-1.png" alt=""></div>
-                        <h5 class="school-name bold">School Name</h5>
-                        <h6 class="school-place">Place Name</h6>
+               <div id="school-slider" class="owl-carousel">
+                  <div class=item>
+                     <div class=shadow-effect>
+                        <div class="school-row">
+                           <div class="school-name-place text-center">
+                              <div class="school-logo"> <img src="./assets/img/School-logo-1.png" alt=""></div>
+                              <h5 class="school-name bold">School Name</h5>
+                              <h6 class="school-place">Place Name</h6>
+                           </div>
+                        </div>
                      </div>
                   </div>
-                  <div class="col-lg-2 col-md-4 school-row">
-                     <div class="school-name-place text-center">
-                        <div class="school-logo"> <img src="./assets/img/School-logo-2.png" alt=""></div>
-                        <h5 class="school-name bold">School Name</h5>
-                        <h6 class="school-place">Place Name</h6>
+                  <div class=item>
+                     <div class=shadow-effect>
+                        <div class="school-row">
+                           <div class="school-name-place text-center">
+                              <div class="school-logo"> <img src="./assets/img/School-logo-2.png" alt=""></div>
+                              <h5 class="school-name bold">School Name</h5>
+                              <h6 class="school-place">Place Name</h6>
+                           </div>
+                        </div>
                      </div>
                   </div>
-                  <div class="col-lg-2 col-md-4 school-row">
-                     <div class="school-name-place text-center">
-                        <div class="school-logo"> <img src="./assets/img/School-logo-3.png" alt=""></div>
-                        <h5 class="school-name bold">School Name</h5>
-                        <h6 class="school-place">Place Name</h6>
+                  <div class=item>
+                     <div class=shadow-effect>
+                        <div class="school-row">
+                           <div class="school-name-place text-center">
+                              <div class="school-logo"> <img src="./assets/img/School-logo-3.png" alt=""></div>
+                              <h5 class="school-name bold">School Name</h5>
+                              <h6 class="school-place">Place Name</h6>
+                           </div>
+                        </div>
                      </div>
                   </div>
-                  <div class="col-lg-2 col-md-4 school-row">
-                     <div class="school-name-place text-center">
-                        <div class="school-logo"> <img src="./assets/img/School-logo-4.png" alt=""></div>
-                        <h5 class="school-name bold">School Name</h5>
-                        <h6 class="school-place">Place Name</h6>
+                  <div class=item>
+                     <div class=shadow-effect>
+                        <div class="school-row">
+                           <div class="school-name-place text-center">
+                              <div class="school-logo"> <img src="./assets/img/School-logo-4.png" alt=""></div>
+                              <h5 class="school-name bold">School Name</h5>
+                              <h6 class="school-place">Place Name</h6>
+                           </div>
+                        </div>
                      </div>
                   </div>
-                  <div class="col-lg-2 col-md-4 school-row">
-                     <div class="school-name-place text-center">
-                        <div class="school-logo"> <img src="./assets/img/School-logo-4.png" alt=""></div>
-                        <h5 class="school-name bold">School Name</h5>
-                        <h6 class="school-place">Place Name</h6>
+                  <div class=item>
+                     <div class=shadow-effect>
+                        <div class="school-row">
+                           <div class="school-name-place text-center">
+                              <div class="school-logo"> <img src="./assets/img/School-logo-1.png" alt=""></div>
+                              <h5 class="school-name bold">School Name</h5>
+                              <h6 class="school-place">Place Name</h6>
+                           </div>
+                        </div>
                      </div>
                   </div>
-                  <div class="col-lg-2 col-md-4 school-row">
-                     <div class="school-name-place text-center">
-                        <div class="school-logo"> <img src="./assets/img/School-logo-3.png" alt=""></div>
-                        <h5 class="school-name bold">School Name</h5>
-                        <h6 class="school-place">Place Name</h6>
-                     </div>
-                  </div>
-                  <div class="col-lg-2 col-md-4 school-row">
-                     <div class="school-name-place text-center">
-                        <div class="school-logo"> <img src="./assets/img/School-logo-2.png" alt=""></div>
-                        <h5 class="school-name bold">School Name</h5>
-                        <h6 class="school-place">Place Name</h6>
-                     </div>
-                  </div>
-                  <div class="col-lg-2 col-md-4 school-row">
-                     <div class="school-name-place text-center">
-                        <div class="school-logo"> <img src="./assets/img/School-logo-1.png" alt=""></div>
-                        <h5 class="school-name bold">School Name</h5>
-                        <h6 class="school-place">Place Name</h6>
+                  <div class=item>
+                     <div class=shadow-effect>
+                        <div class="school-row">
+                           <div class="school-name-place text-center">
+                              <div class="school-logo"> <img src="./assets/img/School-logo-2.png" alt=""></div>
+                              <h5 class="school-name bold">School Name</h5>
+                              <h6 class="school-place">Place Name</h6>
+                           </div>
+                        </div>
                      </div>
                   </div>
                </div>
@@ -470,6 +498,7 @@
       </div>
    </section>
    <!-- School Area End -->
+
    <!-- Contact Area Start -->
    <section class="sova-skills-contact-area section-separator">
       <div class="container-fluid">
@@ -502,6 +531,8 @@
       </div>
    </section>
    <!-- Contact Area End -->
+
+   <!-- Footer Start -->
    <footer class="sova-skills-footer section-separator pb-45">
       <div class="container-fluid">
          <div class="row footer-bg m-center">
@@ -558,12 +589,12 @@
          </div>
       </div>
    </footer>
-   <!-- Footer Area Start -->
    <!-- Footer Area End -->
 </body>
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/js/popper.min.js"></script>
 <script src="assets/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.1/owl.carousel.min.js"></script>
 <script src="assets/js/script.js"></script>
 
 </html>

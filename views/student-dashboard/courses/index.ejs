@@ -28,22 +28,27 @@
             <div class="navbar-collapse collapse justify-content-center" id="navbarCollapse">
                 <ul class="navbar-nav align-items-center">
                     <li class="nav-item">
-                        <a href="../" class="nav-link close-menu active">Home</a>
+                        <a href="http://localhost:8000/<%= currUser.roles[0] %>/home"
+                            class="nav-link close-menu active">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a href="../academics/" class="nav-link close-menu">Academics</a>
+                        <a href="http://localhost:8000/<%= currUser.roles[0] %>/academics"
+                            class="nav-link close-menu">Academics</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link close-menu">Courses</a>
+                        <a href="http://localhost:8000/<%= currUser.roles[0] %>/courses"
+                            class="nav-link close-menu">Courses</a>
                     </li>
                     <li class="nav-item">
-                        <a href="../community/" class="nav-link close-menu">Community</a>
+                        <a href="http://localhost:8000/<%= currUser.roles[0] %>/community"
+                            class="nav-link close-menu">Community</a>
                     </li>
                     <li class="nav-item">
-                        <a href="../competition/" class="nav-link close-menu">Competitions</a>
+                        <a href="http://localhost:8000/<%= currUser.roles[0] %>/competitions"
+                            class="nav-link close-menu">Competitions</a>
                     </li>
                     <li class="nav-item">
-                        <a href="/logout" class="nav-link close-menu sova-skills-btn-1">Logout</a>
+                        <a href="logout/" class="nav-link close-menu sova-skills-btn-1">Logout</a>
                     </li>
                 </ul>
             </div>
@@ -72,8 +77,19 @@
                         <img width="20px" src="../../assets/img/icons/search-icon.svg" alt="search-icon">
                     </div>
                 </div>
-                <div class="col-lg-2 col-md-2 text-right m-hide">
-                    <a href="/logout" class="sova-skills-btn-6">Logout</a>
+                <div class="col-lg-2 col-md-2 m-hide">
+                    <ul class="navbar-nav align-items-center">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-center sova-skills-btn-6" href="#"
+                                id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false">
+                                <%= currUser.firstName %>
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="/logout">Logout</a>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -87,32 +103,42 @@
                 <div class="col-lg-2 col-md-3 m-hide side-bar">
                     <div class="sova-skills-sidebar">
                         <div class="sova-skills-sidebar-item">
-                            <a class="d-flex align-items-center" href="../">
-                                <img class="m-2" width="15px" src="../../assets/img/icons/home-icon.svg" alt="home-icon">
+                            <a class="d-flex align-items-center"
+                                href="http://localhost:8000/<%= currUser.roles[0] %>/home">
+                                <img class="m-2" width="15px" src="../../assets/img/icons/home-icon.svg"
+                                    alt="home-icon">
                                 <span>Home</span>
                             </a>
                         </div>
                         <div class="sova-skills-sidebar-item">
-                            <a class="d-flex align-items-center" href="../academics/">
-                                <img class="m-2" width="15px" src="../../assets/img/icons/academic-icon.svg" alt="academics-icon">
+                            <a class="d-flex align-items-center"
+                                href="http://localhost:8000/<%= currUser.roles[0] %>/academics">
+                                <img class="m-2" width="15px" src="../../assets/img/icons/academic-icon.svg"
+                                    alt="academics-icon">
                                 <span>Academics</span>
                             </a>
                         </div>
                         <div class="sova-skills-sidebar-item active">
-                            <a class="d-flex align-items-center" href="#">
-                                <img class="m-2" width="15px" src="../../assets/img/icons/course-icon.svg" alt="courses-icon">
+                            <a class="d-flex align-items-center"
+                                href="http://localhost:8000/<%= currUser.roles[0] %>/courses">
+                                <img class="m-2" width="15px" src="../../assets/img/icons/course-icon.svg"
+                                    alt="courses-icon">
                                 <span>Courses</span>
                             </a>
                         </div>
                         <div class="sova-skills-sidebar-item">
-                            <a class="d-flex align-items-center" href="../community/">
-                                <img class="m-2" width="15px" src="../../assets/img/icons/community-icon.svg" alt="community-icon">
+                            <a class="d-flex align-items-center"
+                                href="http://localhost:8000/<%= currUser.roles[0] %>/community">
+                                <img class="m-2" width="15px" src="../../assets/img/icons/community-icon.svg"
+                                    alt="community-icon">
                                 <span>Community</span>
                             </a>
                         </div>
                         <div class="sova-skills-sidebar-item">
-                            <a class="d-flex align-items-center" href="../competition/">
-                                <img class="m-2" width="15px" src="../../assets/img/icons/compi-icon.svg" alt="competitions-icon">
+                            <a class="d-flex align-items-center"
+                                href="http://localhost:8000/<%= currUser.roles[0] %>/courses">
+                                <img class="m-2" width="15px" src="../../assets/img/icons/compi-icon.svg"
+                                    alt="competitions-icon">
                                 <span>Competitions</span>
                             </a>
                         </div>
@@ -129,42 +155,39 @@
                     <div class="row">
                         <div class="col-12">
                             <img src="../../assets/img/dashboard-banner.svg">
+                            <% if(currUser.roles[0] === 'admin'){ %>
+                            <a href="http://localhost:8000/admin/courses/new">
+                                <button>Add New Course</button>
+                            </a>
+                            <% } %>
                             <div class="row pt-4">
                                 <% for(let course of allCourses){ %>
-                                <div class="col-md-6 col-lg-4 col-sm-6 col-12 course-card">
-                                    <div class="card">
-                                        <img src="../../assets/img/course/c-1.png" class="img-fluid full-img">
-                                        <div class="card-body">
-                                            <div class="d-flex justify-content-between align-items-center">
-                                                <p class="course-type">Language</p>
-                                                <p class="course-level"><img width="10px" src="../../assets/img/icons/dot-icon.svg"> <%= course.level %></p>
+                                    <div class="col-md-6 col-lg-4 col-sm-6 col-12 course-card">
+                                        <div class="card">
+                                            <img src="../../assets/img/course/c-1.png" class="img-fluid full-img">
+                                            <div class="card-body">
+                                                <div class="d-flex justify-content-between align-items-center">
+                                                    <p class="course-type">Language</p>
+                                                    <p class="course-level"><img width="10px"
+                                                            src="../../assets/img/icons/dot-icon.svg">
+                                                        <%= course.level %>
+                                                    </p>
+                                                </div>
+                                                <h5 class="card-title bold">
+                                                    <%= course.title %>
+                                                </h5>
+                                                <p class="card-text mb-0">Duration: <%= course.duration %> hours</p>
+                                                <p class="card-text mb-0">Class: <%= course.class %>
+                                                </p>
+                                                <p class="card-text">Support: 1-1</p>
+                                                <a href="" class="card-link text-center">
+                                                    <p class="mb-0">Join The Class</p>
+                                                </a>
                                             </div>
-                                            <h5 class="card-title bold"><%= course.title %></h5>
-                                            <p class="card-text mb-0">Duration: <%= course.duration %> hours</p>
-                                            <p class="card-text mb-0">Class: <%= course.class %></p>
-                                            <p class="card-text">Support: 1-1</p>
-                                            <a href="" class="card-link text-center"><p class="mb-0">Join The Class</p></a>
                                         </div>
                                     </div>
-                                </div>
-                                <% } %>
-                                <!-- <div class="col-md-6 col-lg-4 col-sm-6 col-12 course-card">
-                                    <div class="card">
-                                        <img src="../../assets/img/course/c-1.png" class="img-fluid full-img">
-                                        <div class="card-body">
-                                            <div class="d-flex justify-content-between align-items-center">
-                                                <p class="course-type">Language</p>
-                                                <p class="course-level"><img width="10px" src="../../assets/img/icons/dot-icon.svg"> Beginner</p>
-                                            </div>
-                                            <h5 class="card-title bold">Enterpreneurship</h5>
-                                            <p class="card-text mb-0">Duration: 8 hours</p>
-                                            <p class="card-text mb-0">Class: Recorded</p>
-                                            <p class="card-text">Support: 1-1</p>
-                                            <a href="" class="card-link text-center"><p class="mb-0">Join The Class</p></a>
-                                        </div>
-                                    </div>
-                                </div> -->
-                                <!-- <div class="col-md-6 col-lg-4 col-sm-6 col-12 course-card">
+                                    <% } %>
+                                        <!-- <div class="col-md-6 col-lg-4 col-sm-6 col-12 course-card">
                                     <div class="card">
                                         <img src="../../assets/img/course/c-1.png" class="img-fluid full-img">
                                         <div class="card-body">
@@ -180,7 +203,7 @@
                                         </div>
                                     </div>
                                 </div> -->
-                                <!-- <div class="col-md-6 col-lg-4 col-sm-6 col-12 course-card">
+                                        <!-- <div class="col-md-6 col-lg-4 col-sm-6 col-12 course-card">
                                     <div class="card">
                                         <img src="../../assets/img/course/c-1.png" class="img-fluid full-img">
                                         <div class="card-body">
@@ -196,7 +219,7 @@
                                         </div>
                                     </div>
                                 </div> -->
-                                <!-- <div class="col-md-6 col-lg-4 col-sm-6 col-12 course-card">
+                                        <!-- <div class="col-md-6 col-lg-4 col-sm-6 col-12 course-card">
                                     <div class="card">
                                         <img src="../../assets/img/course/c-1.png" class="img-fluid full-img">
                                         <div class="card-body">
@@ -212,7 +235,23 @@
                                         </div>
                                     </div>
                                 </div> -->
-                                <!-- <div class="col-md-6 col-lg-4 col-sm-6 col-12 course-card">
+                                        <!-- <div class="col-md-6 col-lg-4 col-sm-6 col-12 course-card">
+                                    <div class="card">
+                                        <img src="../../assets/img/course/c-1.png" class="img-fluid full-img">
+                                        <div class="card-body">
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <p class="course-type">Language</p>
+                                                <p class="course-level"><img width="10px" src="../../assets/img/icons/dot-icon.svg"> Beginner</p>
+                                            </div>
+                                            <h5 class="card-title bold">Enterpreneurship</h5>
+                                            <p class="card-text mb-0">Duration: 8 hours</p>
+                                            <p class="card-text mb-0">Class: Recorded</p>
+                                            <p class="card-text">Support: 1-1</p>
+                                            <a href="" class="card-link text-center"><p class="mb-0">Join The Class</p></a>
+                                        </div>
+                                    </div>
+                                </div> -->
+                                        <!-- <div class="col-md-6 col-lg-4 col-sm-6 col-12 course-card">
                                     <div class="card">
                                         <img src="../../assets/img/course/c-1.png" class="img-fluid full-img">
                                         <div class="card-body">

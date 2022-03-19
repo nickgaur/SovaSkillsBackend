@@ -15,7 +15,7 @@ module.exports.isAdminLoggedIn = (req, res, next) => {
 };
 
 module.exports.isUser = async (req, res, next) => {
-  const {schoolID} = req.body;
+  const { schoolID } = req.body;
   const currentUser = await User.findOne({ schoolID });
   if (!currentUser || currentUser.roles[0] !== "student") {
     return res.redirect("/student");
@@ -24,7 +24,7 @@ module.exports.isUser = async (req, res, next) => {
 };
 
 module.exports.isAdmin = async (req, res, next) => {
-  const {schoolID} = req.body;
+  const { schoolID } = req.body;
   const currentUser = await User.findOne({ schoolID });
   if (!currentUser || currentUser.roles[0] !== "admin") {
     return res.redirect("/admin");
@@ -35,8 +35,8 @@ module.exports.isAdmin = async (req, res, next) => {
 module.exports.isAdminLogged = async (req, res, next) => {
   const currID = req.session.userID;
   const user = await User.findById(currID)
-  if (user.roles[0] !== 'admin'){
-  return res.redirect('/admin')
+  if (user.roles[0] !== 'admin') {
+    return res.redirect('/admin')
   }
   next()
 }
@@ -44,8 +44,8 @@ module.exports.isAdminLogged = async (req, res, next) => {
 module.exports.isUserLogged = async (req, res, next) => {
   const currID = req.session.userID;
   const user = await User.findById(currID)
-  if (user.roles[0] !== 'student'){
-  return res.redirect('/student')
+  if (user.roles[0] !== 'student') {
+    return res.redirect('/student')
   }
   next()
 }

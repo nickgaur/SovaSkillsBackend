@@ -28,22 +28,27 @@
             <div class="navbar-collapse collapse justify-content-center" id="navbarCollapse">
                 <ul class="navbar-nav align-items-center">
                     <li class="nav-item">
-                        <a href="../" class="nav-link close-menu active">Home</a>
+                        <a href="http://localhost:8000/<%= currUser.roles[0] %>/home"
+                            class="nav-link close-menu active">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a href="../academics/" class="nav-link close-menu">Academics</a>
+                        <a href="http://localhost:8000/<%= currUser.roles[0] %>/academics"
+                            class="nav-link close-menu">Academics</a>
                     </li>
                     <li class="nav-item">
-                        <a href="../courses/" class="nav-link close-menu">Courses</a>
+                        <a href="http://localhost:8000/<%= currUser.roles[0] %>/courses"
+                            class="nav-link close-menu">Courses</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link close-menu">Community</a>
+                        <a href="http://localhost:8000/<%= currUser.roles[0] %>/community"
+                            class="nav-link close-menu">Community</a>
                     </li>
                     <li class="nav-item">
-                        <a href="../competition/" class="nav-link close-menu">Competitions</a>
+                        <a href="http://localhost:8000/<%= currUser.roles[0] %>/competitions"
+                            class="nav-link close-menu">Competitions</a>
                     </li>
                     <li class="nav-item">
-                        <a href="" class="nav-link close-menu sova-skills-btn-1">Logout</a>
+                        <a href="logout/" class="nav-link close-menu sova-skills-btn-1">Logout</a>
                     </li>
                 </ul>
             </div>
@@ -72,8 +77,18 @@
                         <img width="20px" src="../../assets/img/icons/search-icon.svg" alt="search-icon">
                     </div>
                 </div>
-                <div class="col-lg-2 col-md-2 text-right m-hide">
-                    <a href="/student-register" class="sova-skills-btn-6">Logout</a>
+                <div class="col-lg-2 col-md-2 m-hide">
+                    <ul class="navbar-nav align-items-center">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-center sova-skills-btn-6" href="#"
+                                id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false">
+                                User</a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="/logout">Logout</a>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -87,32 +102,42 @@
                 <div class="col-lg-2 col-md-3 m-hide side-bar">
                     <div class="sova-skills-sidebar">
                         <div class="sova-skills-sidebar-item">
-                            <a class="d-flex align-items-center" href="../">
-                                <img class="m-2" width="15px" src="../../assets/img/icons/home-icon.svg" alt="home-icon">
+                            <a class="d-flex align-items-center"
+                                href="http://localhost:8000/<%= currUser.roles[0] %>/home">
+                                <img class="m-2" width="15px" src="../../assets/img/icons/home-icon.svg"
+                                    alt="home-icon">
                                 <span>Home</span>
                             </a>
                         </div>
                         <div class="sova-skills-sidebar-item">
-                            <a class="d-flex align-items-center" href="../academics/">
-                                <img class="m-2" width="15px" src="../../assets/img/icons/academic-icon.svg" alt="academics-icon">
+                            <a class="d-flex align-items-center"
+                                href="http://localhost:8000/<%= currUser.roles[0] %>/academics">
+                                <img class="m-2" width="15px" src="../../assets/img/icons/academic-icon.svg"
+                                    alt="academics-icon">
                                 <span>Academics</span>
                             </a>
                         </div>
                         <div class="sova-skills-sidebar-item">
-                            <a class="d-flex align-items-center" href="../courses/">
-                                <img class="m-2" width="15px" src="../../assets/img/icons/course-icon.svg" alt="courses-icon">
+                            <a class="d-flex align-items-center"
+                                href="http://localhost:8000/<%= currUser.roles[0] %>/courses">
+                                <img class="m-2" width="15px" src="../../assets/img/icons/course-icon.svg"
+                                    alt="courses-icon">
                                 <span>Courses</span>
                             </a>
                         </div>
                         <div class="sova-skills-sidebar-item active">
-                            <a class="d-flex align-items-center" href="#">
-                                <img class="m-2" width="15px" src="../../assets/img/icons/community-icon.svg" alt="community-icon">
+                            <a class="d-flex align-items-center"
+                                href="http://localhost:8000/<%= currUser.roles[0] %>/community">
+                                <img class="m-2" width="15px" src="../../assets/img/icons/community-icon.svg"
+                                    alt="community-icon">
                                 <span>Community</span>
                             </a>
                         </div>
                         <div class="sova-skills-sidebar-item">
-                            <a class="d-flex align-items-center" href="../competition/">
-                                <img class="m-2" width="15px" src="../../assets/img/icons/compi-icon.svg" alt="competitions-icon">
+                            <a class="d-flex align-items-center"
+                                href="http://localhost:8000/<%= currUser.roles[0] %>/competitions">
+                                <img class="m-2" width="15px" src="../../assets/img/icons/compi-icon.svg"
+                                    alt="competitions-icon">
                                 <span>Competitions</span>
                             </a>
                         </div>
@@ -130,7 +155,8 @@
                         <div class="col-12">
                             <div class="community-banner card text-center">
                                 <h4 class="text-white">Sova Skills Club</h4>
-                                <p class="text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, iusto!</p>
+                                <p class="text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia,
+                                    iusto!</p>
                                 <div>
                                     <a class="sova-skills-btn-8" href="">Explore More</a>
                                 </div>
@@ -149,10 +175,13 @@
                                         </div>
                                         <div class="card-body">
                                             <h5 class="card-title bold">Finance Club</h5>
-                                            <p class="card-text mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit ipsum dolor ertgfbv kopy</p>
+                                            <p class="card-text mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing
+                                                elit ipsum dolor ertgfbv kopy</p>
                                             <div class="d-flex justify-content-between align-items-center pt-4">
                                                 <p class="mb-0">2,444 members</p>
-                                                <a href="" class="btn sova-skills-btn-7"><p class="mb-0">Join Now</p></a>
+                                                <a href="" class="btn sova-skills-btn-7">
+                                                    <p class="mb-0">Join Now</p>
+                                                </a>
                                             </div>
                                         </div>
                                     </div>
@@ -167,10 +196,13 @@
                                         </div>
                                         <div class="card-body">
                                             <h5 class="card-title bold">Finance Club</h5>
-                                            <p class="card-text mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit ipsum dolor ertgfbv kopy</p>
+                                            <p class="card-text mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing
+                                                elit ipsum dolor ertgfbv kopy</p>
                                             <div class="d-flex justify-content-between align-items-center pt-4">
                                                 <p class="mb-0">2,444 members</p>
-                                                <a href="" class="btn sova-skills-btn-7"><p class="mb-0">Join Now</p></a>
+                                                <a href="" class="btn sova-skills-btn-7">
+                                                    <p class="mb-0">Join Now</p>
+                                                </a>
                                             </div>
                                         </div>
                                     </div>
@@ -185,10 +217,13 @@
                                         </div>
                                         <div class="card-body">
                                             <h5 class="card-title bold">Finance Club</h5>
-                                            <p class="card-text mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit ipsum dolor ertgfbv kopy</p>
+                                            <p class="card-text mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing
+                                                elit ipsum dolor ertgfbv kopy</p>
                                             <div class="d-flex justify-content-between align-items-center pt-4">
                                                 <p class="mb-0">2,444 members</p>
-                                                <a href="" class="btn sova-skills-btn-7"><p class="mb-0">Join Now</p></a>
+                                                <a href="" class="btn sova-skills-btn-7">
+                                                    <p class="mb-0">Join Now</p>
+                                                </a>
                                             </div>
                                         </div>
                                     </div>
@@ -203,10 +238,13 @@
                                         </div>
                                         <div class="card-body">
                                             <h5 class="card-title bold">Finance Club</h5>
-                                            <p class="card-text mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit ipsum dolor ertgfbv kopy</p>
+                                            <p class="card-text mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing
+                                                elit ipsum dolor ertgfbv kopy</p>
                                             <div class="d-flex justify-content-between align-items-center pt-4">
                                                 <p class="mb-0">2,444 members</p>
-                                                <a href="" class="btn sova-skills-btn-7"><p class="mb-0">Join Now</p></a>
+                                                <a href="" class="btn sova-skills-btn-7">
+                                                    <p class="mb-0">Join Now</p>
+                                                </a>
                                             </div>
                                         </div>
                                     </div>
@@ -221,10 +259,13 @@
                                         </div>
                                         <div class="card-body">
                                             <h5 class="card-title bold">Finance Club</h5>
-                                            <p class="card-text mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit ipsum dolor ertgfbv kopy</p>
+                                            <p class="card-text mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing
+                                                elit ipsum dolor ertgfbv kopy</p>
                                             <div class="d-flex justify-content-between align-items-center pt-4">
                                                 <p class="mb-0">2,444 members</p>
-                                                <a href="" class="btn sova-skills-btn-7"><p class="mb-0">Join Now</p></a>
+                                                <a href="" class="btn sova-skills-btn-7">
+                                                    <p class="mb-0">Join Now</p>
+                                                </a>
                                             </div>
                                         </div>
                                     </div>
@@ -239,10 +280,13 @@
                                         </div>
                                         <div class="card-body">
                                             <h5 class="card-title bold">Finance Club</h5>
-                                            <p class="card-text mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit ipsum dolor ertgfbv kopy</p>
+                                            <p class="card-text mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing
+                                                elit ipsum dolor ertgfbv kopy</p>
                                             <div class="d-flex justify-content-between align-items-center pt-4">
                                                 <p class="mb-0">2,444 members</p>
-                                                <a href="" class="btn sova-skills-btn-7"><p class="mb-0">Join Now</p></a>
+                                                <a href="" class="btn sova-skills-btn-7">
+                                                    <p class="mb-0">Join Now</p>
+                                                </a>
                                             </div>
                                         </div>
                                     </div>
@@ -257,10 +301,13 @@
                                         </div>
                                         <div class="card-body">
                                             <h5 class="card-title bold">Finance Club</h5>
-                                            <p class="card-text mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit ipsum dolor ertgfbv kopy</p>
+                                            <p class="card-text mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing
+                                                elit ipsum dolor ertgfbv kopy</p>
                                             <div class="d-flex justify-content-between align-items-center pt-4">
                                                 <p class="mb-0">2,444 members</p>
-                                                <a href="" class="btn sova-skills-btn-7"><p class="mb-0">Join Now</p></a>
+                                                <a href="" class="btn sova-skills-btn-7">
+                                                    <p class="mb-0">Join Now</p>
+                                                </a>
                                             </div>
                                         </div>
                                     </div>
@@ -275,10 +322,13 @@
                                         </div>
                                         <div class="card-body">
                                             <h5 class="card-title bold">Finance Club</h5>
-                                            <p class="card-text mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit ipsum dolor ertgfbv kopy</p>
+                                            <p class="card-text mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing
+                                                elit ipsum dolor ertgfbv kopy</p>
                                             <div class="d-flex justify-content-between align-items-center pt-4">
                                                 <p class="mb-0">2,444 members</p>
-                                                <a href="" class="btn sova-skills-btn-7"><p class="mb-0">Join Now</p></a>
+                                                <a href="" class="btn sova-skills-btn-7">
+                                                    <p class="mb-0">Join Now</p>
+                                                </a>
                                             </div>
                                         </div>
                                     </div>
@@ -293,10 +343,13 @@
                                         </div>
                                         <div class="card-body">
                                             <h5 class="card-title bold">Finance Club</h5>
-                                            <p class="card-text mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit ipsum dolor ertgfbv kopy</p>
+                                            <p class="card-text mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing
+                                                elit ipsum dolor ertgfbv kopy</p>
                                             <div class="d-flex justify-content-between align-items-center pt-4">
                                                 <p class="mb-0">2,444 members</p>
-                                                <a href="" class="btn sova-skills-btn-7"><p class="mb-0">Join Now</p></a>
+                                                <a href="" class="btn sova-skills-btn-7">
+                                                    <p class="mb-0">Join Now</p>
+                                                </a>
                                             </div>
                                         </div>
                                     </div>
