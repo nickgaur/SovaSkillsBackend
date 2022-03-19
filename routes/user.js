@@ -13,7 +13,7 @@ router
 
 router
   .route('/home')
-  .get(isUserLoggedIn,isUserLogged, users.renderHomepage)
+  .get(isUserLoggedIn, isUserLogged, users.renderHomepage)
 
 router.route('/academics').get(isUserLoggedIn, users.renderAcademics)
 
